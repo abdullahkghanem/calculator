@@ -1,4 +1,5 @@
 import time
+import math
 class calculator:
 
 
@@ -9,8 +10,11 @@ class calculator:
             try:
                 self.inp1 = int(input("Enter The First Number: ")) #USER INPUT
                 self.operation = int(input(
-                    "What operation you want to perform?\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Power\n"))
-                self.inp2 = int(input("Enter The Second Number: "))
+                    "What operation you want to perform?\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Power\n6.Square Root\n"))
+                if self.operation == 1 or self.operation == 2 or self.operation == 3 or self.operation == 4 or self.operation == 5:
+                    self.inp2 = int(input("Enter The Second Number: "))
+                elif self.operation ==6:
+                    pass
             except ValueError: #CHECKS THAT INPUTS ARE INTEGERS ONLY
                 print("ERROR: You didn't enter a number to perform calculations on")
                 continue
@@ -28,6 +32,8 @@ class calculator:
                     print("You can't divide by ZERO.")  #SUSPENDS DIVIDING BY ZERO
             elif self.operation == 5:
                 print(str(self.inp1) + " Power " + str(self.inp2) + " = ", self.inp1 ** self.inp2)
+            elif self.operation == 6:
+                print("Square Root of " + str(self.inp1) + " is ", math.sqrt(self.inp1))
             else:
                 while True: #CHECKS THAT USER IS CHOOSING A RIGHT OPERATION
                     print("You did not choose a right operation..")
@@ -52,6 +58,10 @@ class calculator:
                     elif self.new == 5:
                         print(str(self.inp1) + " Power " + str(self.inp2) +
                             " = ", self.inp1 ** self.inp2)
+                        break
+                    elif self.operation == 6:
+                        print("Square Root of " + str(self.inp1) +
+                            " is ", math.sqrt(self.inp1))
                         break
                     else:
                         continue
