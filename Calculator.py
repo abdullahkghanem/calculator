@@ -39,7 +39,7 @@ class calculator:
                           " = ", self.inp1 / self.inp2)
                 except ZeroDivisionError:
                     # SUSPENDS DIVIDING BY ZERO
-                    print("You can't divide by ZERO.")
+                    print(colored('ERROR: You can\'t divide by Zero','red'))
             elif self.operation == 5:
                 print(str(self.inp1) + " Power " +
                       str(self.inp2) + " = ", self.inp1 ** self.inp2)
